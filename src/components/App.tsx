@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { FC } from "react";
 export interface HelloWorldProps {
   userName: string;
   lang: string;
 }
-export const App = (props: HelloWorldProps) => (
+
+export const App: FC<HelloWorldProps> = ({ userName, lang }) => (
   <h1>
-    Hi {props.userName} would you like {props.lang}?
+    Hi {userName} would you like {lang}?
   </h1>
 );
