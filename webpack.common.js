@@ -1,6 +1,5 @@
 const path = require('path');
-const TsConfigPathsPlugin = require('awesome-typescript-loader')
-  .TsConfigPathsPlugin;
+const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -15,7 +14,10 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     symlinks: false,
-    cacheWithContext: false
+    cacheWithContext: false,
+    plugins: [
+      new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+    ],
   },
   module: {
     rules: [

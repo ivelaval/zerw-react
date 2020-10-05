@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxWithLabel changes the text after click 1`] = `
+<h1>
+  Hi 
+  Ivan
+   would you like 
+  react
+  ?
+</h1>
+`;
+
+exports[`Home component after render 1`] = `
+<h1>
+  Hi 
+  Ivan
+   would you like 
+  react
+  ?
+</h1>
+`;
