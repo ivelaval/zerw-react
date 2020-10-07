@@ -13,10 +13,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-    symlinks: false,
+    symlinks: true,
     cacheWithContext: false,
     plugins: [
-      new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+      new TsConfigPathsPlugin({}),
     ],
   },
   module: {
@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /\.(ts|tsx|jsx|js)$/,
         include: path.resolve(__dirname, 'src'),
-        loader: 'awesome-typescript-loader'
+        loader: 'awesome-typescript-loader',
       },
       {
         enforce: 'pre',
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-        include: path.resolve(__dirname, 'src/assets'),
+        include: path.resolve(__dirname, 'src/assets/fonts'),
         use: [
           {
             loader: 'file-loader',
@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpe?g|gif|ico)$/,
-        include: path.resolve(__dirname, 'src/assets'),
+        include: path.resolve(__dirname, 'src/assets/images'),
         use: [
           {
             loader: 'file-loader',
@@ -72,6 +72,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: project.title,
+      favicon: project.favicon,
       template: path.resolve(__dirname, 'src', 'index.html')
     })
   ]

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "jsx": "react",
-    "module": "es6",
     "target": "es5",
+    "module": "es6",
     "lib": ["es5", "es6", "dom"],
     "moduleResolution": "node",
     "outDir": "./dist/",
@@ -14,7 +15,14 @@
     "noImplicitAny": true,
     "removeComments": true,
     "allowJs": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["react", "jest"],
+    "paths": {
+      "@/*": ["*"],
+      "@app/*": ["app/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["app/components/*"]
+    }
   },
   "include": [
     "./src/**/*"
